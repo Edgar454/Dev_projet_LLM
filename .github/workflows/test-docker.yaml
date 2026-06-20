@@ -21,7 +21,4 @@ jobs:
           EOF
 
       - name: Start services
-        run: docker compose up -d
-
-      - name: Show logs
-        run: docker compose logs
+        run: docker compose up 
