@@ -11,6 +11,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Create .env file
+        run: |
+          cat <<EOF > .env
+          LANGCHAIN_API_KEY=${{ secrets.LANGCHAIN_API_KEY }}
+          LANGCHAIN_TRACING_V2=${{ secrets.LANGCHAIN_TRACING_V2 }}
+          LANGCHAIN_PROJECT=${{ secrets.LANGCHAIN_PROJECT }}
+          GROQ_API_KEY=${{ secrets.GROQ_API_KEY }}
+          EOF
+
       - name: Start services
         run: docker compose up -d
 

@@ -32,8 +32,8 @@ services:
       DB_HOST: postgres
       DB_PORT: 5432
       DB_NAME: ${POSTGRES_DB:-postgres}
-      DB_USER: ${API_USER:-api_user}
-      DB_PASSWORD: ${API_PASSWORD:-api_password}
+      DB_USER: ${POSTGRES_USER:-postgres}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-password}
       DB_SSLMODE: disable
       # LLMs related environment variables
       LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY}
@@ -54,7 +54,7 @@ services:
   frontend:
     build: 
       context: .
-      Dockerfile: ./ui/interviewai-vite/Dockerfile
+      dockerfile: ./ui/interviewai-vite/Dockerfile
     ports:
       - "5173:80"
     depends_on:
