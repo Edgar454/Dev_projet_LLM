@@ -28,7 +28,7 @@ services:
     ports:
         - 8000:8000
     environment:
-      DATABASE_URL: ${DATABASE_URL:-"postgresql://postgres:password@postgres:5432/postgres"}
+      DATABASE_URL: ${DATABASE_URL:-postgresql://postgres:password@postgres:5432/postgres}
       # LLMs related environment variables
       LANGCHAIN_API_KEY: ${LANGCHAIN_API_KEY}
       LANGCHAIN_TRACING_V2: ${LANGCHAIN_TRACING_V2}
