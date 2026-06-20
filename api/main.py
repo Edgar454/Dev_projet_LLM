@@ -10,6 +10,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5175",  # React frontend
+        "http://frontend:5173",
     ],
     allow_methods=["GET", "POST", "DELETE", "PUT", "PATCH" , "OPTIONS"],
     allow_headers=["*"],

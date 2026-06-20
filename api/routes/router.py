@@ -10,6 +10,9 @@ from api.services.interview_service import InterviewService
 router = APIRouter()
 service = InterviewService()
 
+@router.get("/health")
+def health_check():
+    return {"status": "healthy"}
 
 @router.post("/session")
 def create_session(payload: SessionCreate):
