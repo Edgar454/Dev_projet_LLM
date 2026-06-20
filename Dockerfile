@@ -4,7 +4,7 @@ FROM ghcr.io/astral-sh/uv:python3.10-trixie-slim
 WORKDIR /app
 
 # Copy dependency files
-COPY api/pyproject.toml api/uv.lock  ./
+COPY pyproject.toml uv.lock  ./
 
 # Install Python dependencies
 ENV UV_PROJECT_ENVIRONMENT="/usr/local/"
