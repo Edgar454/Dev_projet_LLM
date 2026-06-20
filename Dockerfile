@@ -3,6 +3,9 @@ FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+    
 # Copy dependency files
 COPY pyproject.toml uv.lock  ./
 
