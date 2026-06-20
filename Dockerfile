@@ -1,5 +1,5 @@
 # Dockerfile
-FROM ghcr.io/astral-sh/uv:python3.10-trixie-slim
+FROM ghcr.io/astral-sh/uv:python3.13-trixie-slim
 
 WORKDIR /app
 
